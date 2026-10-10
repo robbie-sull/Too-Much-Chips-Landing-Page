@@ -47,7 +47,7 @@ export default function SeasoningComparison() {
         </figure>
         <figure className="seasoning-comparison-ours">
           <ComparisonChip seasoned />
-          <figcaption className="mono">Too much chip</figcaption>
+          <figcaption className="mono">Too Much Chips</figcaption>
         </figure>
       </div>
       <span className="seasoning-comparison-note mono">Illustrated comparison</span>
