@@ -37,8 +37,9 @@ export default function OrderSection() {
             <article className={`order-card ${p.tone}`} key={p.id} data-testid={`card-order-${p.id}`}>
               <div className="order-bag" aria-hidden="true">
                 <span className="order-bag-top" />
-                <span className="order-bag-name brand">{p.name.toUpperCase()}</span>
-                <span className="order-bag-sun" />
+                <span className="order-bag-name brand">{p.name.toUpperCase().split(' ').map((w) => <span key={w} className="order-bag-line">{w}</span>)}</span>
+                {p.id === 'bbq' && <span className="order-bag-sun" />}
+                {p.id === 'korean-spice' && <span className="order-bag-dots" />}
               </div>
               <div className="order-info">
                 <span className="order-tag mono">{p.tag}</span>

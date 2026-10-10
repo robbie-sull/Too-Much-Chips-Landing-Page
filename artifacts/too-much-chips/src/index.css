@@ -232,13 +232,11 @@
 .chips-card { background: var(--tomato); }
 .seasoning-card { background: #cddd36; color: var(--ink); }
 .card-number, .card-stamp { font-size: 9px; letter-spacing: .08em; }
-.pile-chips { height: 113px; position: relative; margin: 19px 0 0; }
-.pile-chips .chip-shape { position: absolute; }
-.pile-chips .chip-shape:nth-child(1) { left: 12%; top: 20px; transform: rotate(-25deg); }
-.pile-chips .chip-shape:nth-child(2) { left: 28%; top: 2px; transform: rotate(16deg); }
-.pile-chips .chip-shape:nth-child(3) { left: 45%; top: 24px; transform: rotate(-8deg); }
-.pile-chips .chip-shape:nth-child(4) { left: 60%; top: 3px; transform: rotate(31deg); }
-.pile-chips .chip-shape:nth-child(5) { left: 74%; top: 29px; transform: rotate(-27deg); }
+.pile-chips { height: 175px; width: 230px; max-width: 100%; position: relative; margin: 19px auto 0; }
+.pile-piece { position: absolute; z-index: 1; display: block; }
+.pile-bag { position: absolute; z-index: 2; left: 20%; right: 20%; bottom: 0; height: 115px; background: var(--lime); border: 2px solid var(--ink); border-radius: 4px 4px 14px 14px; display: grid; place-items: center; color: var(--ink); box-shadow: 5px 5px 0 rgba(35,40,73,.2); }
+.pile-bag-lip { position: absolute; top: -2px; left: -2px; right: -2px; height: 10px; border: 2px solid var(--ink); background: repeating-linear-gradient(90deg,#f2bc65 0 5px,#d99a46 5px 6px); }
+.pile-bag-copy { font-size: 17px; line-height: .85; text-align: center; font-weight: 800; margin-top: 8px; }
 .promise-card h3 { margin: 8px 0 12px; font-size: 39px; letter-spacing: -.07em; line-height: .92; }
 .promise-card p { max-width: 310px; font-size: 13px; line-height: 1.6; }
 .card-stamp { display: block; margin-top: 22px; }
