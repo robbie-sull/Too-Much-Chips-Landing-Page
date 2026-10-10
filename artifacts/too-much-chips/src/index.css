@@ -232,11 +232,8 @@
 .chips-card { background: var(--tomato); }
 .seasoning-card { background: #cddd36; color: var(--ink); }
 .card-number, .card-stamp { font-size: 9px; letter-spacing: .08em; }
-.pile-chips { height: 175px; width: 230px; max-width: 100%; position: relative; margin: 19px auto 0; }
-.pile-piece { position: absolute; z-index: 1; display: block; }
-.pile-bag { position: absolute; z-index: 2; left: 20%; right: 20%; bottom: 0; height: 115px; background: var(--lime); border: 2px solid var(--ink); border-radius: 4px 4px 14px 14px; display: grid; place-items: center; color: var(--ink); box-shadow: 5px 5px 0 rgba(35,40,73,.2); }
-.pile-bag-lip { position: absolute; top: -2px; left: -2px; right: -2px; height: 10px; border: 2px solid var(--ink); background: repeating-linear-gradient(90deg,#f2bc65 0 5px,#d99a46 5px 6px); }
-.pile-bag-copy { font-size: 17px; line-height: .85; text-align: center; font-weight: 800; margin-top: 8px; }
+.filled-chip-bag { height: 175px; width: 260px; max-width: 100%; margin: 19px auto 0; }
+.filled-chip-bag svg { width: 100%; height: 100%; overflow: visible; }
 .promise-card h3 { margin: 8px 0 12px; font-size: 39px; letter-spacing: -.07em; line-height: .92; }
 .promise-card p { max-width: 310px; font-size: 13px; line-height: 1.6; }
 .card-stamp { display: block; margin-top: 22px; }
@@ -350,7 +347,7 @@ a:focus-visible { outline: 3px solid #26304e; outline-offset: 4px; }
   .promise-pair { grid-template-columns: 1fr; }
   .promise-card { min-height: 360px; padding: 22px 24px; }
   .promise-card + .promise-card { border-left: 0; border-top: 1px solid rgba(35,40,73,.35); }
-  .pile-chips, .seasoning-burst { margin-top: 14px; }
+  .filled-chip-bag, .seasoning-burst { margin-top: 14px; }
   .promise-card h3 { font-size: 37px; }
   .fine-note { font-size: 8px; line-height: 1.6; }
   .headspace-section { display: flex; flex-direction: column; padding: 72px 7% 77px; gap: 37px; }
