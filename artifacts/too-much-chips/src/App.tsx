@@ -1,5 +1,6 @@
 import OrderSection from './components/OrderSection';
 import FilledChipBag from './components/FilledChipBag';
+import SeasoningComparison from './components/SeasoningComparison';
 import { ArrowDownRight, ArrowRight, ChevronDown, Dot, Plus, Sparkles } from 'lucide-react';
 
 function Chip({ className = '' }: { className?: string }) {
@@ -159,7 +160,7 @@ function App() {
           </article>
           <article className="promise-card seasoning-card">
             <span className="card-number mono">B / THE FLAVOR</span>
-            <div className="seasoning-burst" aria-hidden="true"><i /><i /><i /><i /><i /><i /><i /><i /></div>
+            <SeasoningComparison />
             <h3 className="brand">More seasoning<br />on the chips.</h3>
             <p>Give every bite a better shot at showing up with the flavor you were promised.</p>
             <span className="card-stamp mono">MORE BITE-BY-BITE ZING</span>

@@ -1,0 +1,11 @@
+.seasoning-comparison { height: 175px; margin: 19px auto 0; display: flex; flex-direction: column; justify-content: center; max-width: 370px; }
+.seasoning-comparison-chips { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; align-items: start; }
+.seasoning-comparison figure { min-width: 0; margin: 0; text-align: center; }
+.seasoning-comparison svg { display: block; width: 100%; max-width: 145px; height: 100px; margin: 0 auto 8px; filter: drop-shadow(2px 4px 2px rgba(103,70,30,.18)); transform: rotate(-9deg); }
+.seasoning-comparison-ours svg { transform: rotate(9deg); }
+.seasoning-comparison figcaption { font-size: 10px; line-height: 1.4; }
+.seasoning-comparison-ours figcaption { font-weight: 700; }
+.seasoning-comparison-note { margin-top: 12px; text-align: center; font-size: 8px; opacity: .65; }
+@media (max-width: 640px) {
+  .seasoning-comparison { margin-top: 14px; }
+}

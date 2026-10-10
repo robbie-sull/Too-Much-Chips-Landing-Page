@@ -237,10 +237,6 @@
 .promise-card h3 { margin: 8px 0 12px; font-size: 39px; letter-spacing: -.07em; line-height: .92; }
 .promise-card p { max-width: 310px; font-size: 13px; line-height: 1.6; }
 .card-stamp { display: block; margin-top: 22px; }
-.seasoning-burst { height: 113px; width: 170px; position: relative; margin: 19px auto 0; }
-.seasoning-burst::before { content: ''; position: absolute; width: 66px; height: 66px; border: 1px solid var(--ink); border-radius: 50%; left: 50%; top: 20px; transform: translateX(-50%); background: radial-gradient(circle, var(--tomato) 0 4px, transparent 5px), radial-gradient(circle at 60% 31%,var(--tomato) 0 3px,transparent 4px), radial-gradient(circle at 34% 66%,var(--tomato) 0 3px,transparent 4px); }
-.seasoning-burst i { display: block; position: absolute; width: 5px; height: 5px; background: var(--tomato); border: 1px solid var(--ink); border-radius: 50%; }
-.seasoning-burst i:nth-child(1) { left: 9px; top: 50px; } .seasoning-burst i:nth-child(2) { left: 35px; top: 4px; } .seasoning-burst i:nth-child(3) { right: 23px; top: 7px; } .seasoning-burst i:nth-child(4) { right: 0; top: 51px; } .seasoning-burst i:nth-child(5) { left: 28px; bottom: 2px; } .seasoning-burst i:nth-child(6) { right: 41px; bottom: 0; } .seasoning-burst i:nth-child(7) { left: 1px; top: 24px; } .seasoning-burst i:nth-child(8) { right: 2px; top: 21px; }
 .fine-note { text-align: center; color: #c3bfd0; font-size: 9px; letter-spacing: .1em; margin: 25px 0 0; }
 .headspace-section { background: #e6a35b; color: var(--ink); display: grid; grid-template-columns: 1fr 1fr; padding: 97px 10%; gap: 9%; align-items: center; }
 .headspace-art { min-height: 442px; position: relative; display: grid; place-items: center; }
@@ -347,7 +343,7 @@ a:focus-visible { outline: 3px solid #26304e; outline-offset: 4px; }
   .promise-pair { grid-template-columns: 1fr; }
   .promise-card { min-height: 360px; padding: 22px 24px; }
   .promise-card + .promise-card { border-left: 0; border-top: 1px solid rgba(35,40,73,.35); }
-  .filled-chip-bag, .seasoning-burst { margin-top: 14px; }
+  .filled-chip-bag { margin-top: 14px; }
   .promise-card h3 { font-size: 37px; }
   .fine-note { font-size: 8px; line-height: 1.6; }
   .headspace-section { display: flex; flex-direction: column; padding: 72px 7% 77px; gap: 37px; }

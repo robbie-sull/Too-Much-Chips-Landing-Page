@@ -8,3 +8,9 @@ The user said they really like the Too Much Chips landing page overall, but the 
 **Why:** The user's request was a targeted correction to the chip illustrations, not a broader redesign.
 
 **How to apply:** Preserve the overall typography, colors, copy, and layout for chip-art refinements unless the user asks to change them.
+
+The user called the angled, brim-full pouch and coordinated BBQ/Korean Spice packaging “near perfection”; further full-bag changes should be small refinements.
+
+**Why:** The user explicitly approved this visual direction and requested only a little more editing to the full bag.
+
+**How to apply:** Keep the downward-looking view, realistic pouch details, and coordinated flavor packaging when making later refinements.
