@@ -175,13 +175,17 @@
 .bag-sun::before, .bag-sun::after { content: ''; position: absolute; top: 50%; width: 50px; height: 1px; background: var(--ink); }
 .bag-sun::before { left: -22px; transform: rotate(36deg); } .bag-sun::after { right: -22px; transform: rotate(-36deg); }
 .bag-bottom-copy { position: absolute; left: 0; right: 0; bottom: 32px; text-align: center; font-size: 7px; letter-spacing: .08em; }
-.chip-shape { display: inline-flex; align-items: center; justify-content: center; gap: 4px; width: 52px; height: 33px; position: relative; background: #f1a74f; border: 1px solid rgba(35,40,73,.66); border-radius: 50% 48% 49% 51% / 55% 45% 53% 47%; box-shadow: inset 0 0 0 3px rgba(255,220,149,.3); }
-.chip-shape::before { content: ''; position: absolute; inset: 4px; border: 1px dashed rgba(138,79,28,.5); border-radius: inherit; }
-.chip-shape i { width: 2px; height: 2px; background: #a64d31; border-radius: 50%; z-index: 1; }
+.chip-shape { display: block; flex: 0 0 auto; width: 52px; height: 42px; position: relative; }
+.chip-shape svg { display: block; width: 100%; height: 100%; overflow: visible; filter: drop-shadow(1px 2px 1px rgba(91,49,24,.28)); }
+.chip-silhouette { fill: #c77935; }
+.chip-surface { fill: #f2b75f; stroke: #e19a47; stroke-width: .8; }
+.chip-cupping { stroke: #ffdc91; stroke-width: 2; opacity: .53; }
+.chip-toasted-spots { fill: #c97738; opacity: .72; }
+.chip-seasoning { fill: #8c5330; opacity: .7; }
 .bag-chip { position: absolute; z-index: 3; transform: rotate(22deg); }
 .chip-one { left: 29px; bottom: 82px; } .chip-two { right: 27px; bottom: 94px; transform: rotate(-25deg); } .chip-three { left: 98px; bottom: 70px; transform: rotate(88deg); }
 .bag-shadow { position: absolute; width: 255px; height: 27px; background: rgba(35,40,73,.24); filter: blur(4px); bottom: 29px; left: 70px; transform: rotate(5deg); }
-.orbit-chip { position: absolute; z-index: 3; box-shadow: 3px 6px 0 rgba(35,40,73,.17); }
+.orbit-chip { position: absolute; z-index: 3; }
 .orbit-one { top: 50px; right: 23px; transform: rotate(-33deg); }
 .orbit-two { left: 22px; top: 168px; transform: rotate(32deg) scale(.8); }
 .orbit-three { bottom: 47px; right: 27px; transform: rotate(17deg) scale(.85); }
@@ -229,7 +233,7 @@
 .seasoning-card { background: #cddd36; color: var(--ink); }
 .card-number, .card-stamp { font-size: 9px; letter-spacing: .08em; }
 .pile-chips { height: 113px; position: relative; margin: 19px 0 0; }
-.pile-chips .chip-shape { position: absolute; box-shadow: 2px 5px 0 rgba(35,40,73,.16); }
+.pile-chips .chip-shape { position: absolute; }
 .pile-chips .chip-shape:nth-child(1) { left: 12%; top: 20px; transform: rotate(-25deg); }
 .pile-chips .chip-shape:nth-child(2) { left: 28%; top: 2px; transform: rotate(16deg); }
 .pile-chips .chip-shape:nth-child(3) { left: 45%; top: 24px; transform: rotate(-8deg); }
@@ -250,7 +254,7 @@
 .air-cloud { width: 47px; height: 47px; border: 1px solid var(--ink); border-radius: 50%; display: grid; place-items: center; font: 15px 'DM Mono',monospace; background: var(--lime); }
 .air-arrow { font-size: 27px; }
 .chip-zone { height: 122px; padding: 15px 22px; display: flex; flex-wrap: wrap; align-content: center; justify-content: center; gap: 5px; }
-.chip-zone .chip-shape { width: 50px; }
+.chip-zone .chip-shape { width: 50px; height: 40px; }
 .hs-bag-copy { position: absolute; bottom: 23px; left: 0; right: 0; text-align: center; font-size: 25px; line-height: .82; letter-spacing: -.07em; }
 .air-label, .air-callout { position: absolute; font-size: 9px; line-height: 1.5; letter-spacing: .08em; }
 .air-label { top: 35px; left: 2%; transform: rotate(-8deg); }

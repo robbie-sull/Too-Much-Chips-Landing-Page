@@ -1,0 +1,95 @@
+.chip-study {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 32px;
+  color: #232849;
+  background:
+    radial-gradient(circle at 10% 10%, rgba(255,255,255,.75), transparent 38%),
+    #f7f1d8;
+  font-family: "DM Sans", Arial, sans-serif;
+}
+
+.chip-study-card {
+  width: min(100%, 580px);
+  padding: 34px;
+  border: 1px solid rgba(35,40,73,.22);
+  background: rgba(255,255,255,.48);
+}
+
+.chip-study-label {
+  margin: 0 0 26px;
+  color: #656778;
+  font: 10px/1.4 "DM Mono", monospace;
+  letter-spacing: .11em;
+  text-transform: uppercase;
+}
+
+.chip-study-row {
+  min-height: 180px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  justify-items: center;
+  gap: 22px;
+}
+
+.chip-study-sample {
+  display: grid;
+  justify-items: center;
+  gap: 24px;
+}
+
+.chip-study-caption {
+  margin: 0;
+  font: 11px/1.4 "DM Mono", monospace;
+  text-align: center;
+}
+
+.chip-study .chip-shape {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  width: 52px;
+  height: 33px;
+  position: relative;
+  background: #f1a74f;
+  border: 1px solid rgba(35,40,73,.66);
+  border-radius: 50% 48% 49% 51% / 55% 45% 53% 47%;
+  box-shadow: inset 0 0 0 3px rgba(255,220,149,.3);
+}
+
+.chip-study .chip-shape::before {
+  content: '';
+  position: absolute;
+  inset: 4px;
+  border: 1px dashed rgba(138,79,28,.5);
+  border-radius: inherit;
+}
+
+.chip-study .chip-shape i {
+  width: 2px;
+  height: 2px;
+  z-index: 1;
+  border-radius: 50%;
+  background: #a64d31;
+}
+
+.chip-study .chip-sample-rotated { transform: scale(2.5) rotate(-10deg); }
+.chip-study .new-chip {
+  width: 132px;
+  height: 105px;
+  filter: drop-shadow(2px 4px 2px rgba(91,49,24,.22));
+}
+.chip-study .new-chip .chip-silhouette { fill: #c77935; }
+.chip-study .new-chip .chip-surface { fill: #f2b75f; stroke: #e19a47; stroke-width: .8; }
+.chip-study .new-chip .chip-cupping { stroke: #ffdc91; stroke-width: 2; opacity: .53; }
+.chip-study .new-chip .chip-toasted-spots { fill: #c97738; opacity: .72; }
+.chip-study .new-chip .chip-seasoning { fill: #8c5330; opacity: .7; }
+
+@media (max-width: 520px) {
+  .chip-study { padding: 18px; }
+  .chip-study-card { padding: 24px 16px; }
+  .chip-study-row { gap: 10px; }
+}
