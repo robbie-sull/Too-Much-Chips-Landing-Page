@@ -1,3 +1,4 @@
+import OrderSection from './components/OrderSection';
 import { ArrowDownRight, ArrowRight, ChevronDown, Dot, Plus, Sparkles } from 'lucide-react';
 
 function Chip({ className = '' }: { className?: string }) {
@@ -74,10 +75,12 @@ function App() {
           <a href="#why" data-testid="link-why">THE POINT</a>
           <a href="#how" data-testid="link-how">THE BAG</a>
           <a href="#script" data-testid="link-script">SAY IT OUT LOUD</a>
+          <a href="#order" data-testid="link-order">ORDER</a>
         </nav>
         <a href="#the-promise" className="header-cta" data-testid="link-promise">
           GET THE IDEA <ArrowRight size={15} strokeWidth={2.5} />
         </a>
+        <a href="#order" className="header-order" data-testid="link-order-cta">ORDER $3.50</a>
       </header>
 
       <section className="hero grain" id="top">
@@ -207,6 +210,8 @@ function App() {
           </div>
         </div>
       </section>
+
+      <OrderSection />
 
       <section className="closing-section">
         <div className="closing-doodles" aria-hidden="true"><Chip /><Chip /><Chip /><span>✳</span></div>
