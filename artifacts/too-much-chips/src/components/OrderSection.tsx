@@ -1,5 +1,6 @@
 import { ArrowUpRight, Lock } from 'lucide-react';
 import { SQUARE_CHECKOUT_LINKS } from '../config/square-checkout-links';
+import FlavorChipArtwork from './FlavorChipArtwork';
 import './OrderSection.css';
 
 const PRODUCTS = [
@@ -37,8 +38,10 @@ export default function OrderSection() {
             <article className={`order-card ${p.tone}`} key={p.id} data-testid={`card-order-${p.id}`}>
               <div className="order-bag" aria-hidden="true">
                 <span className="order-bag-top" />
+                <span className="order-bag-company mono">TOO MUCH CHIPS</span>
                 <span className="order-bag-name brand">{p.name.toUpperCase().split(' ').map((w) => <span key={w} className="order-bag-line">{w}</span>)}</span>
-                <span className="order-bag-dots" />
+                <FlavorChipArtwork flavor={p.id} />
+                <span className="order-bag-bottom" />
               </div>
               <div className="order-info">
                 <span className="order-tag mono">{p.tag}</span>

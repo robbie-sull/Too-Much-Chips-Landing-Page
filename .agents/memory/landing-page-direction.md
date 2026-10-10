@@ -20,3 +20,9 @@ Seasoning on the comparison chip should be scattered naturally, not arranged in 
 **Why:** The user said the repeating seasoning pattern “really annoys some people.”
 
 **How to apply:** Avoid visible rows, stripes, or grids in chip-seasoning artwork while keeping the heavy coverage.
+
+Purchase-bag graphics should look like snack packaging rather than fabric.
+
+**Why:** The user disliked the textile-like repeating decoration and requested chip pictures with different seasoning appearances for each flavor.
+
+**How to apply:** Prefer flavor-specific chip imagery over repeating decorative patterns on the purchase bags.
