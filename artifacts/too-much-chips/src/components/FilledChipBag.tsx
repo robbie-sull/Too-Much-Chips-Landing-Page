@@ -1,15 +1,40 @@
 import { useId } from 'react';
 
+const CHIP_OUTLINE = 'M-21-5C-25-16-9-22 1-18C14-22 27-9 24 2C26 12 11 20 0 17C-14 20-25 8-21-5Z';
+const CHIPS = [
+  [62, 90, 32], [219, 91, -28], [135, 34, 8], [207, 57, -35],
+  [83, 49, -25], [119, 42, 15], [158, 42, -12], [198, 50, 25],
+  [60, 69, 20], [98, 64, -10], [139, 64, 28], [179, 65, -20], [216, 70, 12],
+  [76, 87, -12], [115, 88, 25], [154, 86, -30], [194, 88, 18],
+  [99, 105, -20], [138, 107, 15], [175, 105, -8],
+  [110, 54, 38], [166, 54, -35], [128, 78, -5], [175, 80, 35],
+];
+
+// Independent, stable random samples avoid repeated seasoning motifs across chips.
+const SEASONING = CHIPS.map((_, index) => {
+  let seed = 82719 + index * 1973;
+  const random = () => {
+    seed |= 0;
+    seed = seed + 0x6D2B79F5 | 0;
+    let n = Math.imul(seed ^ seed >>> 15, 1 | seed);
+    n = n + Math.imul(n ^ n >>> 7, 61 | n) ^ n;
+    return ((n ^ n >>> 14) >>> 0) / 4294967296;
+  };
+  const colors = ['#9c4923', '#bd5827', '#da7331', '#713c23', '#e99845'];
+  return Array.from({ length: 115 }, () => ({
+    x: -24 + random() * 49,
+    y: -20 + random() * 40,
+    rx: .45 + random() * .9,
+    ry: .3 + random() * .65,
+    angle: random() * 180,
+    color: colors[Math.floor(random() * colors.length)],
+    opacity: .65 + random() * .3,
+  }));
+});
+
 // A three-quarter view: the wide opening exposes chips across the whole bag.
 export default function FilledChipBag() {
   const id = useId();
-  const chips = [
-    [83, 49, -25], [119, 42, 15], [158, 42, -12], [198, 50, 25],
-    [60, 69, 20], [98, 64, -10], [139, 64, 28], [179, 65, -20], [216, 70, 12],
-    [76, 87, -12], [115, 88, 25], [154, 86, -30], [194, 88, 18],
-    [99, 105, -20], [138, 107, 15], [175, 105, -8],
-    [110, 54, 38], [166, 54, -35], [128, 78, -5], [175, 80, 35],
-  ];
 
   return (
     <div className="filled-chip-bag" aria-hidden="true">
@@ -36,15 +61,24 @@ export default function FilledChipBag() {
           <clipPath id={`${id}-opening`}>
             <ellipse cx="150" cy="77" rx="102" ry="46" />
           </clipPath>
-          <g id={`${id}-chip`}>
-            <path d="M-21-5C-25-16-9-22 1-18C14-22 27-9 24 2C26 12 11 20 0 17C-14 20-25 8-21-5Z" fill={`url(#${id}-gold)`} stroke="#d69841" strokeWidth="1.4" />
-            <path d="M-16 5Q-8 18 10 11M-10-10Q0-15 9-9" fill="none" stroke="#ffe1a0" strokeWidth="2" strokeLinecap="round" />
-            <g fill="#b97430" opacity=".7">
-              <circle cx="-9" cy="-3" r="1.3" /><circle cx="8" cy="4" r="1.6" />
-              <circle cx="1" cy="-10" r="1" /><circle cx="-3" cy="9" r="1" />
-              <circle cx="16" cy="-4" r="1.1" />
+          <clipPath id={`${id}-chip-surface`}>
+            <path d={CHIP_OUTLINE} />
+          </clipPath>
+          {SEASONING.map((grains, index) => (
+            <g key={index} id={`${id}-chip-${index}`}>
+              <path d={CHIP_OUTLINE} fill={`url(#${id}-gold)`} />
+              <g clipPath={`url(#${id}-chip-surface)`}>
+                <path d={CHIP_OUTLINE} fill="#d46b2e" opacity=".12" />
+                {grains.map((grain, grainIndex) => (
+                  <ellipse key={grainIndex} cx={grain.x} cy={grain.y}
+                    rx={grain.rx} ry={grain.ry} fill={grain.color} opacity={grain.opacity}
+                    transform={`rotate(${grain.angle} ${grain.x} ${grain.y})`} />
+                ))}
+              </g>
+              <path d={CHIP_OUTLINE} fill="none" stroke="#d69841" strokeWidth="1.4" />
+              <path d="M-16 5Q-8 18 10 11M-10-10Q0-15 9-9" fill="none" stroke="#ffe1a0" strokeWidth="2" strokeLinecap="round" opacity=".85" />
             </g>
-          </g>
+          ))}
         </defs>
         <g transform="rotate(-10 150 116)">
           <ellipse cx="155" cy="235" rx="83" ry="10" fill="var(--ink)" opacity=".16" />
@@ -60,8 +94,8 @@ export default function FilledChipBag() {
           <ellipse cx="150" cy="77" rx="108" ry="52" fill={`url(#${id}-foil)`} stroke="var(--ink)" strokeWidth="1.5" />
           <ellipse cx="150" cy="77" rx="102" ry="46" fill="#a87334" />
           <g clipPath={`url(#${id}-opening)`}>
-            {chips.map(([x, y, angle], index) => (
-              <use key={index} href={`#${id}-chip`} transform={`translate(${x} ${y}) rotate(${angle})`} />
+            {CHIPS.map(([x, y, angle], index) => (
+              <use key={index} href={`#${id}-chip-${index}`} transform={`translate(${x} ${y}) rotate(${angle})`} />
             ))}
           </g>
           <ellipse cx="150" cy="77" rx="104" ry="48" fill="none" stroke="#eeeede" strokeWidth="2.5" />
