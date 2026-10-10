@@ -1,0 +1,16 @@
+uploads = []
+generated = []
+
+[[outputs]]
+id = "ypnxzn7-WIFEwhyD-Z87Q"
+uri = "file://artifacts/too-much-chips/public/too-much-chips-flyer.pdf"
+type = "pdf"
+title = "Updated Too Much Chips Flyer"
+description = "Print-ready one-page flyer with SCAN TO PRE ORDER NOW and the same verified Square QR code."
+logical_id = "d0d35bd2-a2d9-4012-b781-e029367813bd"
+content_hash = "sha256:20ecc1e48dbfb7737622cecc0b7dde454ba11b083cd1a94e9ffb8d235b189fa5"
+size = 204592
+mtime_ms = 1791648941661
+storage_uri = "gcs://replit-rams-assets-spock/rams/assets/repl:3d7ef316-6acc-4e0e-9cc8-eecdf5a86a7d/d0d35bd2-a2d9-4012-b781-e029367813bd/d6b3f308-0c60-480f-a20a-5c7b7ff83bb4"
+storage_version_token = "1791648957975036"
+content_type = "application/pdf"

@@ -1,0 +1,67 @@
+@font-face { font-family: 'Flyer Syne'; src: url('../assets/fonts/syne-800.ttf') format('truetype'); font-style: normal; font-weight: 800; font-display: block; }
+@font-face { font-family: 'Flyer DM Sans'; src: url('../assets/fonts/dm-sans-400.ttf') format('truetype'); font-style: normal; font-weight: 400; font-display: block; }
+@font-face { font-family: 'Flyer DM Sans'; src: url('../assets/fonts/dm-sans-500.ttf') format('truetype'); font-style: normal; font-weight: 500; font-display: block; }
+@font-face { font-family: 'Flyer DM Mono'; src: url('../assets/fonts/dm-mono-400.woff2') format('woff2'); font-style: normal; font-weight: 400; font-display: block; }
+@font-face { font-family: 'Flyer DM Mono'; src: url('../assets/fonts/dm-mono-500.woff2') format('woff2'); font-style: normal; font-weight: 500 700; font-display: block; }
+.flyer-page .brand { font-family: 'Flyer Syne', sans-serif; }
+.flyer-page .mono, .flyer-page .fc-btn { font-family: 'Flyer DM Mono', monospace; }
+.flyer-page { min-height: 100dvh; background: #d9d3b8; padding: 16px 12px 40px; display: flex; flex-direction: column; align-items: center; gap: 16px; font-family: 'Flyer DM Sans', sans-serif; }
+.flyer-print-tip { font-size: 12px; line-height: 1.5; text-align: center; max-width: 620px; margin: 0; }
+.fc-btn:focus-visible { outline: 3px solid #ed5538; outline-offset: 4px; }
+.flyer-controls { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
+.fc-btn { font: 500 12px 'DM Mono', monospace; letter-spacing: .06em; padding: 12px 16px; border: 1px solid #232849; border-radius: 99px; color: #232849; text-decoration: none; background: transparent; cursor: pointer; }
+.fc-solid { background: #232849; color: #f5f0d9; }
+.flyer-scaler { position: relative; box-shadow: 0 10px 40px rgba(35,40,73,.3); }
+.flyer-sheet { position: absolute; top: 0; left: 0; transform-origin: top left; width: 8.5in; height: 11in; background: #f5f0d9; color: #232849; overflow: hidden; box-sizing: border-box; font-family: 'Flyer DM Sans', sans-serif; }
+.fl-inner { position: absolute; inset: .375in; display: flex; flex-direction: column; border: 2px solid #232849; background: #f5f0d9; overflow: hidden; }
+.fl-top { display: flex; justify-content: space-between; align-items: center; padding: 0 22px; height: 70px; flex: none; border-bottom: 2px solid #232849; }
+.fl-wordmark { font-size: 24px; font-weight: 800; letter-spacing: -.05em; }
+.fl-top .logo-mark { width: 38px; height: 38px; }
+.fl-top .logo-mark span { width: 17px; height: 10px; }
+.fl-top .logo-lockup { gap: 12px; }
+.fl-top-note { font-size: 10px; letter-spacing: .1em; }
+.fl-hero { background: #ed5538; color: #f5f0d9; padding: 28px 28px 26px; position: relative; flex: none; }
+.fl-hero h1 { margin: 0; font-size: 60px; line-height: .86; white-space: nowrap; font-weight: 800; letter-spacing: -.08em; }
+.fl-hero h1 em { font-style: normal; color: #d8e83e; }
+.fl-lede { max-width: 360px; font-size: 16px; line-height: 1.45; margin: 22px 0 0; font-weight: 500; }
+.fl-stamp { position: absolute; right: 36px; bottom: 24px; width: 84px; height: 84px; border: 1px solid #f5f0d9; outline: 1px solid #f5f0d9; outline-offset: 4px; border-radius: 50%; display: grid; place-items: center; text-align: center; font-size: 11px; line-height: 1.4; transform: rotate(-13deg); }
+.fl-ticker { background: #d8e83e; color: #232849; font-weight: 800; font-size: 13px; letter-spacing: .04em; text-align: center; padding: 11px 0; border-top: 2px solid #232849; border-bottom: 2px solid #232849; flex: none; white-space: nowrap; }
+.fl-bags { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; padding: 24px 24px 14px; flex: none; }
+.fl-card { grid-template-columns: 112px 1fr; gap: 14px; padding: 16px 14px; box-shadow: 6px 7px 0 #232849; }
+.fl-card:hover { transform: none; box-shadow: 6px 7px 0 #232849; }
+.fl-card .order-bag { height: 160px; }
+.fl-card .order-info h3 { font-size: 26px; }
+.fl-card .order-price { white-space: nowrap; font-size: 32px; margin: 8px 0 0; }
+.fl-points { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; padding: 14px 24px; flex: none; }
+.fl-points b { font-size: 10px; letter-spacing: .08em; color: #ed5538; font-weight: 500; }
+.fl-points h2 { font-size: 24px; line-height: .98; margin: 6px 0; letter-spacing: -.06em; font-weight: 800; }
+.fl-points p { margin: 0; font-size: 12.5px; line-height: 1.45; }
+.fl-order { margin-top: auto; background: #232849; color: #f5f0d9; display: flex; gap: 24px; align-items: center; padding: 20px 24px; flex: none; }
+.fl-qr { background: #fff; width: 1.6in; height: 1.6in; flex: none; line-height: 0; }
+.fl-qr svg { width: 100%; height: 100%; }
+.fl-scan { color: #d8e83e; font-size: 11px; letter-spacing: .12em; margin: 0; }
+.fl-big { font-size: 32px; line-height: .95; letter-spacing: -.06em; font-weight: 800; margin: 8px 0 10px; }
+.fl-big em { font-style: normal; color: #d8e83e; }
+.fl-url { display: inline-block; color: #f5f0d9; font-size: 14px; border-bottom: 1px solid #d8e83e; text-decoration: none; padding-bottom: 2px; }
+.fl-caveat { font-size: 10.5px; line-height: 1.45; margin: 12px 0 0; opacity: .85; max-width: 380px; }
+
+@page { size: Letter; margin: 0; }
+@media print {
+  html, body { margin: 0 !important; padding: 0 !important; background: #f5f0d9 !important; }
+  body > :not(#root) { display: none !important; }
+  #root { margin: 0 !important; padding: 0 !important; }
+  .flyer-controls, .flyer-print-tip { display: none !important; }
+  .flyer-page { padding: 0; background: none; display: block; min-height: 0; }
+  .flyer-scaler { width: 8.5in !important; height: 11in !important; box-shadow: none; break-inside: avoid; }
+  .flyer-sheet { transform: none !important; }
+  * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
+.fl-card .order-lime .order-bag-name, .fl-card.order-lime .order-bag-name { font-size: 12px; }
+.fl-card .order-price span { font-size: 9px; }
+.fl-card .order-bag-picture { height: 85px; bottom: 12px; }
+.fl-card .order-bag-company { top: 22px; font-size: 8px; }
+.fl-card .order-bag-name { top: 39px; }
+.fl-card.order-tomato .order-bag-name { padding: 15px 3px; }
+.fl-card.order-lime .order-bag-name { padding: 10px 3px; }
+.fl-card:hover .order-bag, .fl-card:focus-within .order-bag { transform: rotate(-4deg); }
+.fl-card.order-lime:hover .order-bag, .fl-card.order-lime:focus-within .order-bag { transform: rotate(4deg); }

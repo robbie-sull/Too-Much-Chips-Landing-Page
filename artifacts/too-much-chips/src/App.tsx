@@ -260,6 +260,7 @@ function App() {
       <footer className="site-footer">
         <a href="#top" className="brand footer-logo" data-testid="link-footer-home">TOO MUCH CHIPS<span>® IDEA, EXTRA CRUNCH.</span></a>
         <span className="mono">A SNACK IDEA WITH ITS HEAD IN THE RIGHT PLACE.</span>
+        <a href={`${import.meta.env.BASE_URL}flyer`} className="footer-top" data-testid="link-footer-flyer" style={{ opacity: .7 }}>FLYER</a>
         <a href="#the-promise" className="footer-top" data-testid="link-footer-promise">THE POINT <Plus size={14} /></a>
       </footer>
     </main>

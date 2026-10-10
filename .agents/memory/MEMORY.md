@@ -1,2 +1,3 @@
 - [Approved landing-page direction](landing-page-direction.md) — preserve the overall Too Much Chips look when refining chip artwork.
 - [Chip products](chip-products.md) — bags cost $3.50; flavors are BBQ and Korean Spice.
+- [Flyer printing](flyer-printing.md) — static fonts preserve PDF embedding; preview banners can displace print content.
