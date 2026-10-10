@@ -1,0 +1,1 @@
+- [Approved landing-page direction](landing-page-direction.md) — preserve the overall Too Much Chips look when refining chip artwork.

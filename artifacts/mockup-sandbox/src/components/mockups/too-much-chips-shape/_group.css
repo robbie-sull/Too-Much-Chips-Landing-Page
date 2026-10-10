@@ -78,12 +78,19 @@
 
 .chip-study .chip-sample-rotated { transform: scale(2.5) rotate(-10deg); }
 .chip-study .new-chip {
+  display: block;
   width: 132px;
   height: 105px;
+  border: 0;
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
   filter: drop-shadow(2px 4px 2px rgba(91,49,24,.22));
 }
-.chip-study .new-chip .chip-silhouette { fill: #c77935; }
-.chip-study .new-chip .chip-surface { fill: #f2b75f; stroke: #e19a47; stroke-width: .8; }
+.chip-study .new-chip::before { content: none; }
+.chip-study .new-chip svg { display: block; width: 100%; height: 100%; }
+.chip-study .new-chip .chip-silhouette { fill: #f2bc65; stroke: #ca8a3f; stroke-width: .9; }
+.chip-study .new-chip .chip-surface { fill: #d99a46; opacity: .48; }
 .chip-study .new-chip .chip-cupping { stroke: #ffdc91; stroke-width: 2; opacity: .53; }
 .chip-study .new-chip .chip-toasted-spots { fill: #c97738; opacity: .72; }
 .chip-study .new-chip .chip-seasoning { fill: #8c5330; opacity: .7; }
