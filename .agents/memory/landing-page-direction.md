@@ -14,3 +14,9 @@ The user called the angled, brim-full pouch and coordinated BBQ/Korean Spice pac
 **Why:** The user explicitly approved this visual direction and requested only a little more editing to the full bag.
 
 **How to apply:** Keep the downward-looking view, realistic pouch details, and coordinated flavor packaging when making later refinements.
+
+Seasoning on the comparison chip should be scattered naturally, not arranged in a repeating pattern.
+
+**Why:** The user said the repeating seasoning pattern “really annoys some people.”
+
+**How to apply:** Avoid visible rows, stripes, or grids in chip-seasoning artwork while keeping the heavy coverage.
