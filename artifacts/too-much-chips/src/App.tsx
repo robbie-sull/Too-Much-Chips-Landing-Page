@@ -1,15 +1,39 @@
 import OrderSection from './components/OrderSection';
 import FilledChipBag from './components/FilledChipBag';
 import SeasoningComparison from './components/SeasoningComparison';
+import { useId } from 'react';
 import { ArrowDownRight, ArrowRight, ChevronDown, Dot, Plus, Sparkles } from 'lucide-react';
 
-function Chip({ className = '' }: { className?: string }) {
+const CHIP_OUTLINE = 'M17 27c-2-12 14-19 29-16 13-5 30 1 36 13 9 9 7 23-3 31-8 8-20 11-32 9-15 2-28-7-31-17-7-6-5-14 1-20z';
+const HERO_SEASONING = (() => {
+  let seed = 73192;
+  const random = () => {
+    seed |= 0;
+    seed = seed + 0x6D2B79F5 | 0;
+    let n = Math.imul(seed ^ seed >>> 15, 1 | seed);
+    n = n + Math.imul(n ^ n >>> 7, 61 | n) ^ n;
+    return ((n ^ n >>> 14) >>> 0) / 4294967296;
+  };
+  const colors = ['#923a20', '#b84b23', '#d76a29', '#6c3823', '#ef9544'];
+  return Array.from({ length: 320 }, () => ({
+    x: 10 + random() * 80,
+    y: 9 + random() * 59,
+    rx: .4 + random() * 1.15,
+    ry: .3 + random() * .7,
+    angle: random() * 180,
+    color: colors[Math.floor(random() * colors.length)],
+  }));
+})();
+
+function Chip({ className = '', heavilySeasoned = false }: { className?: string; heavilySeasoned?: boolean }) {
+  const clipId = useId();
   return (
     <span aria-hidden="true" className={`chip-shape ${className}`}>
       <svg viewBox="0 0 100 76" focusable="false">
+        <defs><clipPath id={clipId}><path d={CHIP_OUTLINE} /></clipPath></defs>
         <path
           className="chip-silhouette"
-          d="M17 27c-2-12 14-19 29-16 13-5 30 1 36 13 9 9 7 23-3 31-8 8-20 11-32 9-15 2-28-7-31-17-7-6-5-14 1-20z"
+          d={CHIP_OUTLINE}
         />
         <path
           className="chip-surface"
@@ -36,6 +60,16 @@ function Chip({ className = '' }: { className?: string }) {
           <circle cx="78" cy="23" r=".8" />
           <circle cx="23" cy="29" r=".8" />
         </g>
+        {heavilySeasoned && (
+          <g clipPath={`url(#${clipId})`}>
+            <path d={CHIP_OUTLINE} fill="#c85b26" opacity=".22" />
+            {HERO_SEASONING.map((grain, index) => (
+              <ellipse key={index} cx={grain.x} cy={grain.y} rx={grain.rx} ry={grain.ry}
+                fill={grain.color} opacity=".9"
+                transform={`rotate(${grain.angle} ${grain.x} ${grain.y})`} />
+            ))}
+          </g>
+        )}
       </svg>
     </span>
   );
@@ -52,13 +86,13 @@ function BagIllustration() {
         <div className="bag-sun" />
         <div className="bag-bottom-copy mono">MORE CHIP. MORE ZING.</div>
         <div className="bag-seal bag-seal-bottom" />
-        <Chip className="bag-chip chip-one" />
-        <Chip className="bag-chip chip-two" />
-        <Chip className="bag-chip chip-three" />
+        <Chip className="bag-chip chip-one" heavilySeasoned />
+        <Chip className="bag-chip chip-two" heavilySeasoned />
+        <Chip className="bag-chip chip-three" heavilySeasoned />
       </div>
-      <Chip className="orbit-chip orbit-one" />
-      <Chip className="orbit-chip orbit-two" />
-      <Chip className="orbit-chip orbit-three" />
+      <Chip className="orbit-chip orbit-one" heavilySeasoned />
+      <Chip className="orbit-chip orbit-two" heavilySeasoned />
+      <Chip className="orbit-chip orbit-three" heavilySeasoned />
       <div className="seal-stamp mono">NO SAD<br />SNACKS</div>
       <div className="stage-caption mono">A BAG WITH A BETTER<br />CHIP-TO-AIR RATIO*</div>
     </div>

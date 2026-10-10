@@ -24,13 +24,9 @@
 .order-info h3 { margin: 6px 0 0; font-size: 36px; line-height: .95; letter-spacing: -.07em; font-weight: 800; }
 .order-price { margin: 10px 0 18px; font-size: 44px; line-height: 1; letter-spacing: -.06em; color: var(--tomato); font-weight: 800; }
 .order-price span { font-size: 10px; letter-spacing: .08em; color: var(--ink); }
-.order-qr-checkout { margin-top: 8px; }
-.order-qr-link { display: inline-block; width: 148px; max-width: 100%; background: #fff; border: 1px solid var(--ink); border-radius: 4px; line-height: 0; }
-.order-qr-link svg { display: block; width: 100%; height: auto; }
-.order-qr-link:hover { outline: 2px solid var(--tomato); outline-offset: 3px; }
-.order-qr-link:focus-visible { outline: 3px solid var(--ink); outline-offset: 4px; }
-.order-qr-caption { font-size: 12px; font-weight: 700; margin: 9px 0 4px; line-height: 1.4; }
-.order-qr-hint { display: block; font-size: 8px; line-height: 1.6; }
+.order-btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 14px 16px; background: var(--ink); color: var(--paper); text-decoration: none; font-size: 10px; line-height: 1.5; border: 1px solid var(--ink); transition: background .2s; }
+.order-btn:hover { background: var(--tomato); }
+.order-btn:focus-visible { outline: 3px solid var(--ink); outline-offset: 4px; }
 .order-note { font-size: 9px; letter-spacing: .06em; margin: 12px 0 0; color: #4a4d62; }
 .order-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 .header-order { margin-left: 12px; background: var(--ink); color: var(--paper) !important; border-radius: 99px; padding: 12px 16px; font: 500 10px 'DM Mono', monospace; letter-spacing: .075em; text-decoration: none; transition: background .2s; }
