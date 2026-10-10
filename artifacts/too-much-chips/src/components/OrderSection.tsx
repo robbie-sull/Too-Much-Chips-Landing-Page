@@ -1,4 +1,4 @@
-import { ArrowUpRight, Lock } from 'lucide-react';
+import { QRCodeSVG } from 'qrcode.react';
 import { SQUARE_CHECKOUT_LINKS } from '../config/square-checkout-links';
 import FlavorChipArtwork from './FlavorChipArtwork';
 import './OrderSection.css';
@@ -28,7 +28,7 @@ export default function OrderSection() {
       <h2 id="order-title" className="brand order-title">Pick your<br /><em>flavor.</em></h2>
       <p className="order-intro">
         {checkoutReady
-          ? 'Two flavors, one price. Choose a bag and finish on Square’s checkout page.'
+          ? 'Two flavors, one price. Scan a QR code to order through Square. On your phone? Tap the code instead.'
           : 'BBQ or Korean Spice. $3.50 per bag. Online ordering through Square is coming soon.'}
       </p>
       <div className="order-grid">
@@ -48,17 +48,20 @@ export default function OrderSection() {
                 <h3 className="brand">{p.name}</h3>
                 <p className="order-price brand" data-testid={`text-price-${p.id}`}>$3.50<span className="mono"> / BAG</span></p>
                 {href ? (
-                  <a className="order-btn" href={href} target="_blank" rel="noopener noreferrer" data-testid={`link-checkout-${p.id}`}>
-                    Checkout with Square <ArrowUpRight size={17} aria-hidden="true" />
-                    <span className="order-sr">, {p.name}, opens in a new tab</span>
-                  </a>
+                  <div className="order-qr-checkout">
+                    <a className="order-qr-link" href={href} target="_blank" rel="noopener noreferrer"
+                      aria-label={`Open Square checkout for ${p.name}, opens in a new tab`}
+                      data-testid={`link-checkout-${p.id}`}>
+                      <QRCodeSVG value={href} size={148} level="M" marginSize={4}
+                        bgColor="#ffffff" fgColor="#000000" role="img"
+                        aria-label={`${p.name} Square checkout QR code`} />
+                    </a>
+                    <p className="order-qr-caption">Scan to order with Square</p>
+                    <span className="order-qr-hint mono">Or tap the code on your phone</span>
+                  </div>
                 ) : (
                   <>
-                    <button type="button" className="order-btn" disabled aria-describedby={`order-note-${p.id}`} data-testid={`button-checkout-${p.id}`}>
-                      <Lock size={15} aria-hidden="true" /> Checkout coming soon
-                      <span className="order-sr"> for {p.name}</span>
-                    </button>
-                    <p className="order-note mono" id={`order-note-${p.id}`} data-testid={`text-status-${p.id}`}>SQUARE CHECKOUT LINK COMING SOON.</p>
+                    <p className="order-note mono" id={`order-note-${p.id}`} data-testid={`text-status-${p.id}`}>SQUARE CHECKOUT QR CODE COMING SOON.</p>
                   </>
                 )}
               </div>
