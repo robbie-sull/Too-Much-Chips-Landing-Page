@@ -13,11 +13,12 @@
 .order-lime .order-bag { background: var(--ink); transform: rotate(4deg); }
 .order-bag-line { display: block; }
 .order-bag-dots { position: absolute; inset: 14px 0 auto; height: 100%; background: radial-gradient(circle, #f2bc65 0 2px, transparent 3px) 0 0/18px 18px, radial-gradient(circle, var(--tomato) 0 1.5px, transparent 2.5px) 9px 9px/18px 18px; opacity: .45; }
+.order-tomato .order-bag-dots { background: radial-gradient(circle, var(--paper) 0 2px, transparent 3px) 0 0/18px 18px, radial-gradient(circle, var(--ink) 0 1.5px, transparent 2.5px) 9px 9px/18px 18px; }
 .order-card:hover .order-bag { transform: rotate(0) scale(1.04); }
 .order-bag-top { position: absolute; top: 0; left: 0; right: 0; height: 12px; border-bottom: 1px solid var(--ink); background: repeating-linear-gradient(90deg, transparent 0 5px, rgba(35,40,73,.3) 5px 6px); }
 .order-bag-name { position: relative; z-index: 1; font-size: 22px; line-height: .85; text-align: center; font-weight: 800; padding: 0 8px; color: var(--paper); }
 .order-lime .order-bag-name { box-sizing: border-box; width: calc(100% - 16px); color: var(--lime); background: var(--ink); border: 2px solid var(--lime); padding: 10px 3px; font-size: 16px; line-height: 1.05; }
-.order-bag-sun { position: absolute; bottom: -26px; width: 80px; height: 80px; border-radius: 50%; border: 1px solid var(--ink); background: var(--lime); }
+.order-tomato .order-bag-name { box-sizing: border-box; width: calc(100% - 16px); color: var(--paper); background: var(--tomato); border: 2px solid var(--paper); padding: 15px 3px; line-height: 1.05; }
 .order-tag { font-size: 9px; letter-spacing: .08em; color: #5a5c6c; }
 .order-info h3 { margin: 6px 0 0; font-size: 36px; line-height: .95; letter-spacing: -.07em; font-weight: 800; }
 .order-price { margin: 10px 0 18px; font-size: 44px; line-height: 1; letter-spacing: -.06em; color: var(--tomato); font-weight: 800; }
