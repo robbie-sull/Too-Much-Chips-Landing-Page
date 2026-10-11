@@ -630,6 +630,9 @@ importers:
       '@types/node':
         specifier: 'catalog:'
         version: 25.9.6
+      '@types/pngjs':
+        specifier: ^6.0.5
+        version: 6.0.5
       '@types/react':
         specifier: 'catalog:'
         version: 19.3.0
@@ -639,6 +642,15 @@ importers:
       '@vitejs/plugin-react':
         specifier: 'catalog:'
         version: 5.2.0(vite@7.3.6(@types/node@25.9.6)(jiti@2.7.0)(lightningcss@1.32.0)(tsx@4.23.13)(yaml@2.8.3))
+      jsqr:
+        specifier: ^1.4.0
+        version: 1.4.0
+      playwright:
+        specifier: ^1.64.0
+        version: 1.64.0
+      pngjs:
+        specifier: ^7.0.0
+        version: 7.0.0
       prosemirror-commands:
         specifier: 1.7.1
         version: 1.7.1
@@ -1769,6 +1781,9 @@ packages:
   '@types/pg@8.23.1':
     resolution: {integrity: sha512-fKVHpikPdg4GKks3JuLEhvwSyvwzF23hnabPy6DD8ljVbC7+6J5dQzdv4arV6jqq57djnMgs1HKBxX4P8aBI3A==}
 
+  '@types/pngjs@6.0.5':
+    resolution: {integrity: sha512-0k5eKfrA83JOZPppLtS2C7OUtyNAl2wKNxfyYl9Q5g9lPkgBl/9hNyAu6HuEH2J4XmIv2znEpkDd0SaZVxW6iQ==}
+
   '@types/qs@6.15.1':
     resolution: {integrity: sha512-GZHUBZR9hckSUhrxmp1nG6NwdpM9fCunJwyThLW1X3AyHgd9IlHb6VANpQQqDr2o/qQp6McZ3y/IA2rVzKzSbw==}
 
@@ -2453,6 +2468,9 @@ packages:
     resolution: {integrity: sha512-p/nXbhSEcu3pZRdkW1OfJhpsVtW1gd4Wa1fnQc9YLiTfAjn0312eMKimbdIQzuZl9aa9xUGaRlP9T/CJE/ditQ==}
     engines: {node: '>=0.10.0'}
 
+  jsqr@1.4.0:
+    resolution: {integrity: sha512-dxLob7q65Xg2DvstYkRpkYtmKm2sPJ9oFhrhmudT1dZvNFFTlroai3AWSpLey/w5vMcLBXRgOJsbXpdN9HzU/A==}
+
   leven@4.1.0:
     resolution: {integrity: sha512-KZ9W9nWDT7rF7Dazg8xyLHGLrmpgq2nVNFUckhqdW3szVP6YhCpp/RAnpmVExA9JvrMynjwSLVrEj3AepHR6ew==}
     engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
@@ -2709,6 +2727,10 @@ packages:
     resolution: {integrity: sha512-kVzTnYFYEyQ9RGzBjNCd2+yEqWmVbxl3AHPynv3qQ6JTjv4a+kwRcnqQwIpuP3NnrnIrE/Q6wWAIAvMfIE2/Yg==}
     engines: {node: '>=20'}
     hasBin: true
+
+  pngjs@7.0.0:
+    resolution: {integrity: sha512-LKWqWJRhstyYo9pGvgor/ivk2w94eSjE3RGVuzLGlr3NmD8bf7RcYGze1mNdEHRP6TRP6rMuDHk5t44hnTRyow==}
+    engines: {node: '>=14.19.0'}
 
   postcss-selector-parser@6.0.10:
     resolution: {integrity: sha512-IQ7TZdoaqbT+LCpShg46jnZVlhWD2w6iQYAcYXfHARZ7X1t/UGhhceQDs5X0cGqKvYlHNOuv7Oa1xmb0oQuA3w==}
@@ -4466,6 +4488,10 @@ snapshots:
       pg-protocol: 1.16.0
       pg-types: 2.2.0
 
+  '@types/pngjs@6.0.5':
+    dependencies:
+      '@types/node': 25.9.6
+
   '@types/qs@6.15.1': {}
 
   '@types/range-parser@1.2.7': {}
@@ -5040,6 +5066,8 @@ snapshots:
 
   jsonpointer@5.0.1: {}
 
+  jsqr@1.4.0: {}
+
   leven@4.1.0: {}
 
   lightningcss-linux-x64-gnu@1.32.0:
@@ -5310,6 +5338,8 @@ snapshots:
   playwright@1.64.0:
     dependencies:
       playwright-core: 1.64.0
+
+  pngjs@7.0.0: {}
 
   postcss-selector-parser@6.0.10:
     dependencies:

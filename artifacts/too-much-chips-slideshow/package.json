@@ -8,6 +8,8 @@
     "build": "vite build --config vite.config.ts",
     "serve": "vite preview --config vite.config.ts --host 0.0.0.0",
     "validate-slides": "pnpm exec tsx scripts/validate-slides.ts",
+    "check:presentation-qr": "pnpm exec tsx scripts/check-presentation-qr.ts",
+    "test:presentation-qr": "pnpm exec tsx scripts/check-presentation-qr.ts --self-test",
     "typecheck": "tsc -p tsconfig.json --noEmit"
   },
   "devDependencies": {
@@ -17,9 +19,13 @@
     "@sinclair/typebox": "0.34.33",
     "@tailwindcss/vite": "catalog:",
     "@types/node": "catalog:",
+    "@types/pngjs": "^6.0.5",
     "@types/react": "catalog:",
     "@types/react-dom": "catalog:",
     "@vitejs/plugin-react": "catalog:",
+    "jsqr": "^1.4.0",
+    "playwright": "^1.64.0",
+    "pngjs": "^7.0.0",
     "prosemirror-commands": "1.7.1",
     "prosemirror-history": "1.5.0",
     "prosemirror-inputrules": "1.5.1",
