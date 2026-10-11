@@ -9,12 +9,12 @@ export default function Cover() {
       <div className="absolute left-[6vw] right-[6vw] bottom-[10vh] grid grid-cols-2 gap-[6.4vw]">
         <section className="border-t-[.5vw] border-primary pt-[4vh]">
           <h2 className="presenter-name">Rory Sullivan</h2>
-          <p className="presenter-detail">seventh grade</p>
+          <p className="presenter-detail">Seventh Grade</p>
           <p className="presenter-detail">Hudsonville Christian Middle School</p>
         </section>
         <section className="border-t-[.5vw] border-accent pt-[4vh]">
-          <h2 className="presenter-name">Emerson Baker</h2>
-          <p className="presenter-detail">fifth grade</p>
+          <h2 className="presenter-name">Emerson Bakker</h2>
+          <p className="presenter-detail">Fifth Grade</p>
           <p className="presenter-detail">Black River Elementary</p>
         </section>
       </div>
