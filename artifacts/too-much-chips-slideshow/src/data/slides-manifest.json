@@ -1,10 +1,10 @@
 [
-  {"id":"2e6d7c4a-49d8-46c9-a88b-1f7a2dfbe001","position":1,"filepath":"src/pages/slides/Cover.tsx","title":"Too Much Chips","description":"Rory Sullivan and Emerson Bakker.","speakerNotes":""},
-  {"id":"2e6d7c4a-49d8-46c9-a88b-1f7a2dfbe002","position":2,"filepath":"src/pages/slides/Problem.tsx","title":"The Problem","description":"Not enough seasoning and chips.","speakerNotes":""},
-  {"id":"2e6d7c4a-49d8-46c9-a88b-1f7a2dfbe003","position":3,"filepath":"src/pages/slides/ExtraChips.tsx","title":"The Problem","description":"Extra seasoning and extra chips.","speakerNotes":""},
-  {"id":"2e6d7c4a-49d8-46c9-a88b-1f7a2dfbe004","position":4,"filepath":"src/pages/slides/InTheField.tsx","title":"In the field","description":"Pitching on 8th Street.","speakerNotes":""},
-  {"id":"2e6d7c4a-49d8-46c9-a88b-1f7a2dfbe005","position":5,"filepath":"src/pages/slides/FavoritePart.tsx","title":"Favorite part of the weekend","description":"Making the website.","speakerNotes":""},
-  {"id":"2e6d7c4a-49d8-46c9-a88b-1f7a2dfbe006","position":6,"filepath":"src/pages/slides/NextSteps.tsx","title":"Pivot or Scale and Next Steps","description":"Starting with small stores.","speakerNotes":""},
-  {"id":"2e6d7c4a-49d8-46c9-a88b-1f7a2dfbe007","position":7,"filepath":"src/pages/slides/Learned.tsx","title":"What I Learned About Myself","description":"Rory and Emerson's strengths.","speakerNotes":""},
-  {"id":"2e6d7c4a-49d8-46c9-a88b-1f7a2dfbe008","position":8,"filepath":"src/pages/slides/ThankYou.tsx","title":"Thank You","description":"Visit the Too Much Chips website.","speakerNotes":""}
+  {"id":"2e6d7c4a-49d8-46c9-a88b-1f7a2dfbe001","position":1,"filepath":"src/pages/slides/Cover.tsx","title":"Too Much Chips","description":"Rory Sullivan, seventh grade, Hudsonville Christian Middle School; Emerson Baker, fifth grade, Black River Elementary.","speakerNotes":""},
+  {"id":"2e6d7c4a-49d8-46c9-a88b-1f7a2dfbe002","position":2,"filepath":"src/pages/slides/Problem.tsx","title":"The Problem","description":"Chip companies don't have enough chips in their bags, and they don't have enough seasoning on the chips.","speakerNotes":""},
+  {"id":"2e6d7c4a-49d8-46c9-a88b-1f7a2dfbe003","position":3,"filepath":"src/pages/slides/ExtraChips.tsx","title":"The Solution","description":"Too Much Chips will have extra chips in the bag and extra seasoning on those chips.","speakerNotes":""},
+  {"id":"2e6d7c4a-49d8-46c9-a88b-1f7a2dfbe004","position":4,"filepath":"src/pages/slides/InTheField.tsx","title":"In the Field","description":"We went down to Eighth Street and we pitched to 50 people. 18 expressed interest to buy and 10 bought.","speakerNotes":""},
+  {"id":"2e6d7c4a-49d8-46c9-a88b-1f7a2dfbe005","position":5,"filepath":"src/pages/slides/FavoritePart.tsx","title":"Favorite Part of the Weekend","description":"Building our website.","speakerNotes":""},
+  {"id":"2e6d7c4a-49d8-46c9-a88b-1f7a2dfbe006","position":6,"filepath":"src/pages/slides/NextSteps.tsx","title":"Pivot or Scale and Next Steps","description":"We're going to try to start to sell in small stores and work our way up.","speakerNotes":""},
+  {"id":"2e6d7c4a-49d8-46c9-a88b-1f7a2dfbe007","position":7,"filepath":"src/pages/slides/Learned.tsx","title":"What I Learned About Myself","description":"Rory is good at presenting and coming up with ideas, and Emerson is good at designing and coming up with ideas.","speakerNotes":""},
+  {"id":"2e6d7c4a-49d8-46c9-a88b-1f7a2dfbe008","position":8,"filepath":"src/pages/slides/ThankYou.tsx","title":"Thank You","description":"Visit https://too-much-chips-landing-page.replit.app/ using the website QR code or alternative link.","speakerNotes":""}
 ]

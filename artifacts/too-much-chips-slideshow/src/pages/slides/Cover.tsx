@@ -13,7 +13,7 @@ export default function Cover() {
           <p className="presenter-detail">Hudsonville Christian Middle School</p>
         </section>
         <section className="border-t-[.5vw] border-accent pt-[4vh]">
-          <h2 className="presenter-name">Emerson Bakker</h2>
+          <h2 className="presenter-name">Emerson Baker</h2>
           <p className="presenter-detail">fifth grade</p>
           <p className="presenter-detail">Black River Elementary</p>
         </section>
