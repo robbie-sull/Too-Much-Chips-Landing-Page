@@ -5,12 +5,19 @@ generated = []
 id = "ypnxzn7-WIFEwhyD-Z87Q"
 uri = "file://artifacts/too-much-chips/public/too-much-chips-flyer.pdf"
 type = "pdf"
-title = "Updated Too Much Chips Flyer"
-description = "Print-ready one-page flyer with SCAN TO PRE ORDER NOW and the same verified Square QR code."
+title = "Too Much Chips Flyer"
+description = "Open or download the one-page sales flyer."
 logical_id = "d0d35bd2-a2d9-4012-b781-e029367813bd"
 content_hash = "sha256:20ecc1e48dbfb7737622cecc0b7dde454ba11b083cd1a94e9ffb8d235b189fa5"
 size = 204592
-mtime_ms = 1791648941661
-storage_uri = "gcs://replit-rams-assets-spock/rams/assets/repl:3d7ef316-6acc-4e0e-9cc8-eecdf5a86a7d/d0d35bd2-a2d9-4012-b781-e029367813bd/d6b3f308-0c60-480f-a20a-5c7b7ff83bb4"
-storage_version_token = "1791648957975036"
+mtime_ms = 1791660202009
+storage_uri = "gcs://replit-rams-assets-spock/rams/assets/repl:3d7ef316-6acc-4e0e-9cc8-eecdf5a86a7d/d0d35bd2-a2d9-4012-b781-e029367813bd/c22ebdaa-2c12-4254-9455-19232bf96e71"
+storage_version_token = "1791745408188523"
 content_type = "application/pdf"
+
+[[outputs]]
+id = "5uYoXJ6FXpV6B8_l_y0OL"
+uri = "file://.local/outputs/Too-Much-Chips-Slideshow.pdf"
+type = "pdf"
+title = "Too Much Chips Slideshow.pdf"
+logical_id = "6a1360a7-f69e-43f3-869f-07f00b4cff56"
