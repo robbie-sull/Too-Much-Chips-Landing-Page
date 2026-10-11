@@ -1,0 +1,28 @@
+kind = "slides"
+previewPath = "/too-much-chips-slideshow/"
+title = "Too Much Chips Slideshow"
+description = "An eight-slide branded presentation for Rory Sullivan and Emerson Bakker about Too Much Chips, their weekend experience, and next steps."
+version = "1.0.0"
+id = "artifacts/too-much-chips-slideshow"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/too-much-chips-slideshow/" ]
+localPort = 20959
+
+[services.development]
+run = "pnpm --filter @workspace/too-much-chips-slideshow run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/too-much-chips-slideshow", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/too-much-chips-slideshow/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "20959"
+BASE_PATH = "/too-much-chips-slideshow/"

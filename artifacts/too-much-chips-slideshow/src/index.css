@@ -1,0 +1,61 @@
+@import 'tailwindcss';
+
+@theme inline {
+  --color-primary: var(--slide-primary);
+  --color-accent: var(--slide-accent);
+  --color-bg: var(--slide-bg);
+  --color-text: var(--slide-text);
+  --color-muted: var(--slide-muted);
+  --font-display: var(--font-display-family);
+  --font-body: var(--font-body-family);
+}
+
+:root {
+  /* Replace these with brand colors */
+  --slide-primary: #ed5538;
+  --slide-accent: #d8e83e;
+  --slide-bg: #f5f0d9;
+  --slide-text: #232849;
+  --slide-muted: #5a5c6c;
+  --font-display-family: 'Syne', sans-serif;
+  --font-body-family: 'DM Sans', sans-serif;
+  color-scheme: light;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background: var(--slide-bg);
+  color: var(--slide-text);
+}
+
+.slide {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.slide-viewer {
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.deck-frame { padding: 8vh 6vw; font-family: var(--font-body-family); }
+.deck-title { font-family: var(--font-display-family); font-weight: 800; font-size: 5vw; line-height: 1.08; margin: 0; text-wrap: balance; }
+.deck-copy { font-size: 3.6vw; line-height: 1.3; margin: 0; text-wrap: pretty; }
+.logo-lockup { display: inline-flex; align-items: center; gap: 1.1vw; color: var(--slide-text); }
+.logo-mark { width: 3.8vw; height: 3.8vw; display: grid; place-items: center; border-radius: 50%; background: var(--slide-primary); transform: rotate(-13deg); flex-shrink: 0; }
+.logo-mark span { width: 1.63vw; height: .95vw; border: .27vw solid var(--slide-bg); border-radius: 70% 45% 65% 35%; transform: rotate(-30deg); }
+.logo-type { font-family: var(--font-display-family); font-size: 1.75vw; line-height: .92; font-weight: 800; letter-spacing: -.055em; }
+.logo-type span { display: block; }
+.presenter-name { font-family: var(--font-display-family); font-size: 2.8vw; line-height: 1.15; font-weight: 800; margin: 0 0 2vh; }
+.presenter-detail { font-size: 2vw; line-height: 1.4; margin: 0; }
+.deck-link { overflow-wrap: anywhere; color: var(--slide-text); font-size: 2vw; line-height: 1.45; text-decoration: underline; text-underline-offset: .25em; }
+.deck-link:focus-visible { outline: .2vw solid var(--slide-primary); outline-offset: .5vw; }
