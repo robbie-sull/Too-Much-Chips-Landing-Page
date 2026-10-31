@@ -49,3 +49,6 @@ Thumbs.db
 .local/
 /generated-artifacts/
 /.pythonlibs/
+
+# Vercel
+.vercel
