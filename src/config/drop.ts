@@ -7,7 +7,7 @@ export const NEXT_DROP: string | null = null;
 // The Google Apps Script web app that adds signups to the waitlist Sheet and
 // emails a heads-up. Setup steps: waitlist/README.md. Empty = signups show as
 // "opening soon" and the form is disabled.
-export const WAITLIST_URL = '';
+export const WAITLIST_URL = 'https://script.google.com/macros/s/AKfycbxSzXDH87qdpiwb0l3bB4Bw7w3VLGTVfc1Zn5TRSgQ4u-LCSV7otwdTw3pDQ2pJ-T2Xpg/exec';
 
 // Where the flyer QR code sends people. ref=flyer lets the Sheet show which
 // signups came from paper.
