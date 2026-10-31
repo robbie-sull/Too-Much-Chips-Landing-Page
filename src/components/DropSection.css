@@ -31,13 +31,55 @@
 .order-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 .header-order { margin-left: 12px; background: var(--ink); color: var(--paper) !important; border-radius: 99px; padding: 12px 16px; font: 500 10px 'DM Mono', monospace; letter-spacing: .075em; text-decoration: none; transition: background .2s; }
 .header-order:hover { background: var(--tomato); }
+.drop-layout { display: grid; grid-template-columns: 1.05fr 1fr; gap: 56px; align-items: start; margin-bottom: 72px; }
+.drop-copy .order-intro { margin-bottom: 30px; }
+.drop-steps { list-style: none; padding: 0; margin: 0; max-width: 440px; border-top: 1px solid var(--ink); }
+.drop-steps li { display: flex; gap: 18px; align-items: baseline; padding: 14px 0; border-bottom: 1px solid var(--ink); }
+.drop-steps li > span { font-size: 10px; letter-spacing: .08em; color: var(--tomato); }
+.drop-steps strong { font-size: 22px; letter-spacing: -.05em; font-weight: 800; }
+.drop-steps p { margin: 3px 0 0; font-size: 14px; line-height: 1.45; }
+.drop-card { padding: 30px; background: #fffbea; border: 1px solid var(--ink); box-shadow: 8px 9px 0 var(--ink); }
+.drop-card-label { margin: 0 0 20px; font-size: 10px; letter-spacing: .11em; color: var(--tomato); }
+.drop-field { display: block; margin-bottom: 16px; }
+.drop-field span { display: block; margin-bottom: 6px; font-size: 9px; letter-spacing: .08em; }
+.drop-field input { box-sizing: border-box; width: 100%; padding: 13px 14px; font: 500 17px 'DM Sans', sans-serif; color: var(--ink); background: var(--paper); border: 1px solid var(--ink); border-radius: 0; }
+.drop-field input:focus-visible { outline: 3px solid var(--tomato); outline-offset: 1px; }
+.drop-flavors { display: flex; flex-wrap: wrap; gap: 10px; margin: 4px 0 24px; padding: 0; border: 0; }
+.drop-flavors legend { padding: 0; margin-bottom: 10px; font-size: 9px; letter-spacing: .08em; }
+.drop-flavor { position: relative; cursor: pointer; }
+.drop-flavor input { position: absolute; inset: 0; margin: 0; opacity: 0; cursor: pointer; }
+.drop-flavor span { display: inline-flex; align-items: center; gap: 9px; padding: 10px 16px; font: 700 14px 'DM Sans', sans-serif; border: 1px solid var(--ink); border-radius: 99px; transition: background .2s, color .2s; }
+.drop-flavor span::before { content: ''; width: 10px; height: 10px; border: 1px solid var(--ink); border-radius: 50%; }
+.drop-flavor input:checked + span { background: var(--ink); color: var(--paper); }
+.drop-flavor.order-tomato input:checked + span::before { background: var(--tomato); border-color: var(--tomato); }
+.drop-flavor.order-lime input:checked + span::before { background: var(--lime); border-color: var(--lime); }
+.drop-flavor input:focus-visible + span { outline: 3px solid var(--tomato); outline-offset: 3px; }
+.drop-trap { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+.drop-submit { width: 100%; padding: 17px 18px; font-size: 12px; letter-spacing: .06em; cursor: pointer; }
+.drop-submit:disabled { opacity: .55; cursor: not-allowed; }
+.drop-submit:disabled:hover { background: var(--ink); }
+.drop-error { margin: 12px 0 0; font-size: 14px; font-weight: 600; color: #b3261e; }
+.drop-fine { margin: 14px 0 0; font-size: 12px; color: #4a4d62; }
+.drop-done-mark { display: grid; place-items: center; width: 56px; height: 56px; margin-bottom: 18px; background: var(--lime); border: 2px solid var(--ink); border-radius: 50%; }
+.drop-done h3 { margin: 0 0 14px; font-size: 44px; line-height: .9; letter-spacing: -.07em; font-weight: 800; }
+.drop-done > p:last-child { margin: 0; font-size: 15px; line-height: 1.5; overflow-wrap: anywhere; }
 @media (min-width: 1500px) { .order-section { padding-left: max(10%, calc((100vw - 1200px)/2)); padding-right: max(10%, calc((100vw - 1200px)/2)); } }
-@media (max-width: 960px) { .order-grid { grid-template-columns: 1fr; } }
+@media (max-width: 960px) {
+  .order-grid, .drop-layout { grid-template-columns: 1fr; }
+  /* Phones (and flyer QR scans) see the form right after the intro, steps after. */
+  .drop-layout { gap: 36px; }
+  .drop-copy { display: contents; }
+  .drop-copy .order-intro { margin: 0; }
+  .drop-card { order: 1; }
+  .drop-steps { order: 2; }
+}
 @media (max-width: 640px) {
   .order-section { padding: 70px 7% 80px; }
   .order-badge { font-size: 7px; padding: 8px 9px; white-space: nowrap; }
   .order-label { font-size: 8px; }
   .order-card { grid-template-columns: 1fr; padding: 20px; box-shadow: 6px 7px 0 var(--ink); }
+  .drop-card { padding: 22px; box-shadow: 6px 7px 0 var(--ink); }
+  .drop-done h3 { font-size: 36px; }
   .order-bag { height: 150px; max-width: 150px; }
   .order-bag-company { top: 18px; font-size: 7px; }
   .order-bag-name { top: 32px; }

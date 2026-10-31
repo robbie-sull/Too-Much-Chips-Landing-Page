@@ -1,8 +1,11 @@
 import { chromium } from 'playwright';
 import assert from 'node:assert/strict';
 
-const base = process.env.FLYER_BASE_URL || `https://${process.env.REPLIT_DEV_DOMAIN}/`;
-const browser = await chromium.launch({ executablePath: process.env.CHROMIUM_PATH || '/repl/tools/bin/chromium', args: ['--no-sandbox'] });
+// Start the site (npm run dev), then: npm run flyer:check
+const base = process.env.FLYER_BASE_URL || 'http://localhost:5173/';
+const browser = await chromium.launch(
+  process.env.CHROMIUM_PATH ? { executablePath: process.env.CHROMIUM_PATH } : { channel: 'chrome' },
+);
 try {
   const page = await browser.newPage({ viewport: { width: 1000, height: 1200 } });
   const errors = [];
@@ -12,7 +15,6 @@ try {
   assert.equal(await page.getByTestId('link-footer-flyer').getAttribute('href'), new URL('flyer', base).pathname);
   assert.match(await page.locator('h1').innerText(), /LESS[\s\S]*MORE[\s\S]*CHIPS/);
   for (const flavor of ['bbq', 'korean-spice']) {
-    assert.equal(await page.getByTestId(`link-checkout-${flavor}`).getAttribute('href'), 'https://square.link/u/YdzZqfzg');
     assert.match(await page.getByTestId(`text-price-${flavor}`).innerText(), /\$3\.50/);
   }
   // The isolated flyer font/print CSS should not load on the landing page.
@@ -22,7 +24,7 @@ try {
   await page.getByTestId('link-footer-flyer').click();
   await page.getByTestId('flyer-sheet').waitFor();
   await page.evaluate(() => document.fonts.ready);
-  assert.equal(await page.getByTestId('link-flyer-checkout').getAttribute('href'), 'https://square.link/u/YdzZqfzg');
+  assert.equal(await page.getByTestId('link-flyer-drop').getAttribute('href'), 'https://toomuchchips.com/?ref=flyer#drop');
   const [download] = await Promise.all([
     page.waitForEvent('download'),
     page.getByTestId('link-flyer-pdf').click(),
@@ -54,7 +56,7 @@ try {
   assert.equal(await page.locator('.flyer-print-tip').isVisible(), false);
   assert.equal(await page.getByTestId('flyer-sheet').evaluate(e => e.getBoundingClientRect().width), 816);
   assert.deepEqual(errors, []);
-  console.log('PASS: landing-page checkout regression, flyer navigation, real PDF download, buy link, print action, mobile proportions, no browser errors');
+  console.log('PASS: landing-page prices, flyer navigation, real PDF download, drop-list link, print action, mobile proportions, no browser errors');
 } finally {
   await browser.close();
 }

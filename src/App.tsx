@@ -1,7 +1,7 @@
-import OrderSection from './components/OrderSection';
+import DropSection from './components/DropSection';
 import FilledChipBag from './components/FilledChipBag';
 import SeasoningComparison from './components/SeasoningComparison';
-import { useId } from 'react';
+import { useEffect, useId } from 'react';
 import { ArrowDownRight, ArrowRight, ChevronDown, Dot, Plus, Sparkles } from 'lucide-react';
 
 const CHIP_OUTLINE = 'M17 27c-2-12 14-19 29-16 13-5 30 1 36 13 9 9 7 23-3 31-8 8-20 11-32 9-15 2-28-7-31-17-7-6-5-14 1-20z';
@@ -100,6 +100,13 @@ function BagIllustration() {
 }
 
 function App() {
+  // The browser looks for #drop before React has drawn the page, so links like
+  // the flyer QR (/?ref=flyer#drop) would land at the top without this.
+  useEffect(() => {
+    const target = window.location.hash && document.getElementById(window.location.hash.slice(1));
+    if (target) target.scrollIntoView({ behavior: 'instant' });
+  }, []);
+
   return (
     <main>
       <header className="site-header">
@@ -111,12 +118,12 @@ function App() {
           <a href="#why" data-testid="link-why">THE POINT</a>
           <a href="#how" data-testid="link-how">THE BAG</a>
           <a href="#script" data-testid="link-script">SAY IT OUT LOUD</a>
-          <a href="#order" data-testid="link-order">ORDER</a>
+          <a href="#drop" data-testid="link-drop">THE DROP</a>
         </nav>
         <a href="#the-promise" className="header-cta" data-testid="link-promise">
           GET THE IDEA <ArrowRight size={15} strokeWidth={2.5} />
         </a>
-        <a href="#order" className="header-order" data-testid="link-order-cta">ORDER $3.50</a>
+        <a href="#drop" className="header-order" data-testid="link-drop-cta">JOIN THE DROP</a>
       </header>
 
       <section className="hero grain" id="top">
@@ -247,7 +254,7 @@ function App() {
         </div>
       </section>
 
-      <OrderSection />
+      <DropSection />
 
       <section className="closing-section">
         <div className="closing-doodles" aria-hidden="true"><Chip /><Chip /><Chip /><span>✳</span></div>

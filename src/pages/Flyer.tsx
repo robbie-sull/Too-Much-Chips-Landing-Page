@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
 import { QRCodeSVG } from 'qrcode.react';
 import FlavorChipArtwork from '../components/FlavorChipArtwork';
-import '../components/OrderSection.css';
+import { FLYER_URL } from '../config/drop';
+import '../components/DropSection.css';
 import './Flyer.css';
 
-const URL_ = 'https://square.link/u/YdzZqfzg';
 const BASE = import.meta.env.BASE_URL;
 const PRODUCTS = [
   { id: 'bbq' as const, name: 'BBQ', tag: 'FLAVOR A', tone: 'order-tomato' },
@@ -15,9 +15,9 @@ export default function Flyer() {
   const [scale, setScale] = useState(1);
   useEffect(() => {
     document.title = 'Too Much Chips — Printable Sales Flyer';
-    document.querySelector('meta[name="description"]')?.setAttribute('content', 'BBQ and Korean Spice. $3.50 per bag. Download or print the Too Much Chips flyer and scan to buy through Square.');
+    document.querySelector('meta[name="description"]')?.setAttribute('content', 'BBQ and Korean Spice. $3.50 per bag. Download or print the Too Much Chips flyer and scan to join the monthly drop list.');
     document.querySelector('meta[property="og:title"]')?.setAttribute('content', 'Too Much Chips — Printable Sales Flyer');
-    document.querySelector('meta[property="og:description"]')?.setAttribute('content', 'BBQ and Korean Spice. $3.50 per bag. Print, share, and scan to buy through Square.');
+    document.querySelector('meta[property="og:description"]')?.setAttribute('content', 'BBQ and Korean Spice. $3.50 per bag. Print, share, and scan to join the monthly drop list.');
     const fit = () => setScale(Math.min(1, (window.innerWidth - 24) / 816));
     fit();
     window.addEventListener('resize', fit);
@@ -75,12 +75,12 @@ export default function Flyer() {
             </section>
             <section className="fl-order">
               <div className="fl-qr">
-                <QRCodeSVG value={URL_} size={144} marginSize={4} fgColor="#232849" bgColor="#ffffff" level="M" title="QR code to Too Much Chips Square checkout" />
+                <QRCodeSVG value={FLYER_URL} size={144} marginSize={4} fgColor="#232849" bgColor="#ffffff" level="M" title="QR code to the Too Much Chips drop list" />
               </div>
               <div className="fl-order-copy">
-                <p className="mono fl-scan">SCAN TO PRE ORDER NOW</p>
+                <p className="mono fl-scan">SCAN TO JOIN THE MONTHLY DROP</p>
                 <p className="brand fl-big">BBQ or Korean Spice.<br /><em>$3.50 per bag.</em></p>
-                <a className="fl-url mono" href={URL_} target="_blank" rel="noopener noreferrer" data-testid="link-flyer-checkout">{URL_}</a>
+                <a className="fl-url mono" href={FLYER_URL} target="_blank" rel="noopener noreferrer" data-testid="link-flyer-drop">toomuchchips.com</a>
                 <p className="fl-caveat">Not zero headspace: a little protective air still cushions the chips. We are making room for more of the good stuff.</p>
               </div>
             </section>

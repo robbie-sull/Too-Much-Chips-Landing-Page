@@ -1,17 +1,14 @@
-// Run against the managed preview: pnpm --filter @workspace/too-much-chips run flyer:pdf
+// Start the site (npm run dev), then: FLYER_BASE_URL=http://localhost:5173/ npm run flyer:pdf
 import { chromium } from 'playwright';
 import assert from 'node:assert/strict';
 import { fileURLToPath } from 'node:url';
 
-const base = process.env.FLYER_BASE_URL || `https://${process.env.REPLIT_DEV_DOMAIN}/`;
-if (!process.env.FLYER_BASE_URL && !process.env.REPLIT_DEV_DOMAIN) {
-  throw new Error('Set FLYER_BASE_URL to the running app URL (including its base path).');
-}
+const base = process.env.FLYER_BASE_URL || 'http://localhost:5173/';
 const output = fileURLToPath(new URL('../public/too-much-chips-flyer.pdf', import.meta.url));
-const browser = await chromium.launch({
-  executablePath: process.env.CHROMIUM_PATH || '/repl/tools/bin/chromium',
-  args: ['--no-sandbox'],
-});
+// Uses the installed Google Chrome; set CHROMIUM_PATH to use a different browser.
+const browser = await chromium.launch(
+  process.env.CHROMIUM_PATH ? { executablePath: process.env.CHROMIUM_PATH } : { channel: 'chrome' },
+);
 try {
   const page = await browser.newPage({ viewport: { width: 1000, height: 1200 } });
   const errors = [];
@@ -19,7 +16,7 @@ try {
   await page.goto(new URL('flyer', base).href);
   await page.getByTestId('flyer-sheet').waitFor();
   await page.evaluate(() => document.fonts.ready);
-  assert.equal(await page.getByTestId('link-flyer-checkout').getAttribute('href'), 'https://square.link/u/YdzZqfzg');
+  assert.equal(await page.getByTestId('link-flyer-drop').getAttribute('href'), 'https://toomuchchips.com/?ref=flyer#drop');
   await page.emulateMedia({ media: 'print' });
   const sizes = await page.evaluate(() => {
     const sheet = document.querySelector('.flyer-sheet');
