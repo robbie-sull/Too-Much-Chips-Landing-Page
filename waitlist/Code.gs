@@ -4,6 +4,8 @@
  * Lives inside the "Too Much Chips Drop List" Google Sheet (Extensions →
  * Apps Script). The website POSTs each signup here; this script adds a row to
  * the Waitlist tab and emails whoever owns the Sheet. Setup: waitlist/README.md.
+ *
+ * @OnlyCurrentDoc  Limits the script's access to this one spreadsheet.
  */
 
 const SHEET_NAME = 'Waitlist';
