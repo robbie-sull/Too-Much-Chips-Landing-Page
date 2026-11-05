@@ -9,7 +9,7 @@
  */
 
 const SHEET_NAME = 'Waitlist';
-const HEADERS = ['Signed up', 'Name', 'Email', 'Flavors', 'Source'];
+const HEADERS = ['Signed up', 'Name', 'Email', 'Flavors', 'Source', 'Bags'];
 const EMAIL_PATTERN = /^[^\s@<>"]+@[^\s@<>"]+\.[^\s@<>"]+$/;
 
 function doPost(e) {
@@ -20,6 +20,7 @@ function doPost(e) {
   if (!EMAIL_PATTERN.test(email)) return reply({ ok: false, error: 'bad-email' });
   const name = clean(p.name, 80);
   const flavors = clean(p.flavors, 60);
+  const bags = clean(p.bags, 40);
   const source = clean(p.source, 40) || 'site';
 
   let total;
@@ -28,7 +29,7 @@ function doPost(e) {
   try {
     const sheet = waitlistSheet();
     if (listedEmails(sheet).indexOf(email) !== -1) return reply({ ok: true });
-    sheet.appendRow([new Date(), asText(name), asText(email), asText(flavors), asText(source)]);
+    sheet.appendRow([new Date(), asText(name), asText(email), asText(flavors), asText(source), asText(bags)]);
     total = sheet.getLastRow() - 1;
   } finally {
     lock.releaseLock();
@@ -43,6 +44,7 @@ function doPost(e) {
         'Name: ' + (name || '(none)'),
         'Email: ' + email,
         'Flavors: ' + (flavors || '(none picked)'),
+        'Bags: ' + (bags || '(none picked)'),
         'Came from: ' + source,
         '',
         total + ' people on the list now.',
