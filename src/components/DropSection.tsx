@@ -9,6 +9,8 @@ const PRODUCTS = [
   { id: 'korean-spice' as const, name: 'Korean Spice', tag: 'FLAVOR B', tone: 'order-lime' },
 ];
 
+const BAG_COUNTS = ['just one', 'maybe a couple', 'too much, obviously', 'idk'];
+
 const STEPS = [
   ['01', 'Join the list', 'Name, email, done.'],
   ['02', 'Get the drop email', 'Once a month, when orders open.'],
@@ -34,6 +36,7 @@ export default function DropSection() {
       name: String(form.get('name') ?? '').trim(),
       email: String(form.get('email') ?? '').trim(),
       flavors: form.getAll('flavor').join(', '),
+      bags: String(form.get('bags') ?? ''),
       source: signupSource(),
       company: String(form.get('company') ?? ''),
     });
@@ -92,6 +95,15 @@ export default function DropSection() {
                   <label key={p.id} className={`drop-flavor ${p.tone}`}>
                     <input type="checkbox" name="flavor" value={p.name} data-testid={`checkbox-${p.id}`} />
                     <span>{p.name}</span>
+                  </label>
+                ))}
+              </fieldset>
+              <fieldset className="drop-flavors">
+                <legend className="mono">HOW MANY BAGS ARE YOU THINKING?</legend>
+                {BAG_COUNTS.map((count, i) => (
+                  <label key={count} className="drop-flavor order-tomato">
+                    <input type="radio" name="bags" value={count} data-testid={`radio-bags-${i}`} />
+                    <span>{count}</span>
                   </label>
                 ))}
               </fieldset>
