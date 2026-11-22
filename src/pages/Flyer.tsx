@@ -15,9 +15,9 @@ export default function Flyer() {
   const [scale, setScale] = useState(1);
   useEffect(() => {
     document.title = 'Too Much Chips — Printable Sales Flyer';
-    document.querySelector('meta[name="description"]')?.setAttribute('content', 'BBQ and Korean Spice. $3.50 per bag. Download or print the Too Much Chips flyer and scan to join the monthly drop list.');
+    document.querySelector('meta[name="description"]')?.setAttribute('content', 'BBQ and Korean Spice. $5 per bag. Download or print the Too Much Chips flyer and scan to join the monthly drop list.');
     document.querySelector('meta[property="og:title"]')?.setAttribute('content', 'Too Much Chips — Printable Sales Flyer');
-    document.querySelector('meta[property="og:description"]')?.setAttribute('content', 'BBQ and Korean Spice. $3.50 per bag. Print, share, and scan to join the monthly drop list.');
+    document.querySelector('meta[property="og:description"]')?.setAttribute('content', 'BBQ and Korean Spice. $5 per bag. Print, share, and scan to join the monthly drop list.');
     const fit = () => setScale(Math.min(1, (window.innerWidth - 24) / 816));
     fit();
     window.addEventListener('resize', fit);
@@ -64,7 +64,7 @@ export default function Flyer() {
                   <div className="order-info">
                     <span className="order-tag mono">{p.tag}</span>
                     <h3 className="brand">{p.name}</h3>
-                    <p className="order-price brand">$3.50<span className="mono"> / BAG</span></p>
+                    <p className="order-price brand">$5<span className="mono"> / BAG</span></p>
                   </div>
                 </div>
               ))}
@@ -79,7 +79,7 @@ export default function Flyer() {
               </div>
               <div className="fl-order-copy">
                 <p className="mono fl-scan">SCAN TO JOIN THE MONTHLY DROP</p>
-                <p className="brand fl-big">BBQ or Korean Spice.<br /><em>$3.50 per bag.</em></p>
+                <p className="brand fl-big">BBQ or Korean Spice.<br /><em>$5 per bag.</em></p>
                 <a className="fl-url mono" href={FLYER_URL} target="_blank" rel="noopener noreferrer" data-testid="link-flyer-drop">toomuchchips.com</a>
                 <p className="fl-caveat">Not zero headspace: a little protective air still cushions the chips. We are making room for more of the good stuff.</p>
               </div>

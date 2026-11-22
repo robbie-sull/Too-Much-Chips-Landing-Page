@@ -15,7 +15,7 @@ try {
   assert.equal(await page.getByTestId('link-footer-flyer').getAttribute('href'), new URL('flyer', base).pathname);
   assert.match(await page.locator('h1').innerText(), /LESS[\s\S]*MORE[\s\S]*CHIPS/);
   for (const flavor of ['bbq', 'korean-spice']) {
-    assert.match(await page.getByTestId(`text-price-${flavor}`).innerText(), /\$3\.50/);
+    assert.match(await page.getByTestId(`text-price-${flavor}`).innerText(), /^\$5\b/);
   }
   // The isolated flyer font/print CSS should not load on the landing page.
   assert.equal(await page.evaluate(() => [...document.styleSheets].some(s => {

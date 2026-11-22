@@ -1,9 +1,6 @@
 .order-section { background: var(--lime); color: var(--ink); padding: 92px 10% 100px; }
-.order-topline { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
-.order-label { font-size: 10px; letter-spacing: .11em; }
-.order-label span { color: var(--tomato); }
-.order-badge { border: 1px solid var(--ink); border-radius: 999px; padding: 10px 13px; font-size: 9px; letter-spacing: .06em; }
-.order-title { font-size: clamp(56px, 9vw, 110px); line-height: .84; letter-spacing: -.085em; margin: 40px 0 20px; font-weight: 800; }
+.order-badge { display: inline-block; margin-bottom: 30px; border: 1px solid var(--ink); border-radius: 999px; padding: 10px 13px; font-size: 9px; letter-spacing: .06em; }
+.order-title { font-size: clamp(56px, 9vw, 110px); line-height: .84; letter-spacing: -.085em; margin: 0 0 20px; font-weight: 800; }
 .order-title em { font-style: normal; color: var(--tomato); }
 .order-intro { max-width: 380px; font-size: 15px; line-height: 1.6; margin: 0 0 44px; }
 .order-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
@@ -76,7 +73,6 @@
 @media (max-width: 640px) {
   .order-section { padding: 70px 7% 80px; }
   .order-badge { font-size: 7px; padding: 8px 9px; white-space: nowrap; }
-  .order-label { font-size: 8px; }
   .order-card { grid-template-columns: 1fr; padding: 20px; box-shadow: 6px 7px 0 var(--ink); }
   .drop-card { padding: 22px; box-shadow: 6px 7px 0 var(--ink); }
   .drop-done h3 { font-size: 36px; }
@@ -88,5 +84,4 @@
   .order-bag-picture { height: 65px; bottom: 7px; }
   .header-order { margin-left: auto; font-size: 9px; padding: 10px 12px; white-space: nowrap; }
   .site-header .logo-lockup { flex-shrink: 0; }
-  .site-header .header-cta { display: none; }
 }

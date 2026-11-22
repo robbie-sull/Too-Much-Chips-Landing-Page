@@ -5,8 +5,8 @@ import FlavorChipArtwork from './FlavorChipArtwork';
 import './DropSection.css';
 
 const PRODUCTS = [
-  { id: 'bbq' as const, name: 'BBQ', tag: 'FLAVOR A', tone: 'order-tomato' },
-  { id: 'korean-spice' as const, name: 'Korean Spice', tag: 'FLAVOR B', tone: 'order-lime' },
+  { id: 'bbq' as const, name: 'BBQ', tone: 'order-tomato' },
+  { id: 'korean-spice' as const, name: 'Korean Spice', tone: 'order-lime' },
 ];
 
 const BAG_COUNTS = ['just one', 'maybe a couple', 'too much, obviously', 'idk'];
@@ -54,11 +54,7 @@ export default function DropSection() {
 
   return (
     <section className="order-section" id="drop" aria-labelledby="drop-title">
-      <div className="order-topline">
-        <div className="order-label mono"><span>05</span> / THE DROP</div>
-        <span className="order-badge mono" data-testid="text-next-drop">NEXT DROP · {NEXT_DROP ? NEXT_DROP.toUpperCase() : 'DATE TBA'}</span>
-      </div>
-
+      {NEXT_DROP && <span className="order-badge mono" data-testid="text-next-drop">NEXT DROP · {NEXT_DROP.toUpperCase()}</span>}
       <h2 id="drop-title" className="brand order-title">Get on the<br /><em>drop list.</em></h2>
       <div className="drop-layout">
         <div className="drop-copy">
@@ -80,7 +76,6 @@ export default function DropSection() {
             </div>
           ) : (
             <form onSubmit={submit} data-testid="form-waitlist">
-              <p className="mono drop-card-label">JOIN THE DROP LIST</p>
               <label className="drop-field">
                 <span className="mono">FIRST NAME</span>
                 <input name="name" autoComplete="given-name" maxLength={80} data-testid="input-name" />
@@ -135,9 +130,8 @@ export default function DropSection() {
               <span className="order-bag-bottom" />
             </div>
             <div className="order-info">
-              <span className="order-tag mono">{p.tag}</span>
               <h3 className="brand">{p.name}</h3>
-              <p className="order-price brand" data-testid={`text-price-${p.id}`}>$3.50<span className="mono"> / BAG</span></p>
+              <p className="order-price brand" data-testid={`text-price-${p.id}`}>$5<span className="mono"> / BAG</span></p>
               <p className="order-note mono">IN EVERY DROP.</p>
             </div>
           </article>
