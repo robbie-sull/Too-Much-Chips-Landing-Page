@@ -14,7 +14,7 @@ orders happen when a drop opens. There is no checkout on the site.
 ## Product facts
 
 - The name is "Too Much Chips": capital T, M, C, with the S. All-caps wordmarks are intentional.
-- Bags are $3.50. Flavors are BBQ and Korean Spice.
+- Bags are $5. Flavors are BBQ and Korean Spice.
 - Drop settings (`NEXT_DROP`, `WAITLIST_URL`, `FLYER_URL`) live in `src/config/drop.ts`.
 - Signups POST form-encoded to a Google Apps Script web app (`waitlist/Code.gs`),
   which appends to a Sheet and emails the Sheet owner. Keep the request a
@@ -31,6 +31,11 @@ orders happen when a drop opens. There is no checkout on the site.
   grids. A repeating seasoning pattern "really annoys some people".
 - Bag graphics should look like snack packaging, not fabric. Prefer
   flavor-specific chip imagery over repeating decorative patterns.
+- Chips are drawn once, in `src/components/chipArt.tsx`: thin, curled slices
+  with crinkled edges. The old blob chips "looked like chicken nuggets".
+- Keep the page free of small mono section labels ("01 / ..."), eyebrows,
+  decorative pills and stray taglines; the owners had them removed. The next-drop
+  pill only shows once `NEXT_DROP` is set.
 - The printed flyer's layout, artwork and palette are approved. Copy tweaks only.
 
 ## Flyer PDF gotchas

@@ -10,8 +10,9 @@ assert len(pdf) == 1, f"Expected one page, got {len(pdf)}"
 page = pdf[0]
 assert tuple(page.rect) == (0, 0, 612, 792), page.rect
 text = page.get_text()
-for required in ["LESS BAG.", "MORE CHIPS.", "BBQ", "Korean Spice", "$3.50", "SCAN TO JOIN THE MONTHLY DROP", "toomuchchips.com"]:
+for required in ["LESS BAG.", "MORE CHIPS.", "BBQ", "Korean Spice", "$5 per bag.", "SCAN TO JOIN THE MONTHLY DROP", "toomuchchips.com"]:
     assert required in text, f"Missing or clipped text: {required}"
+assert "$3.50" not in text, "Old price still on the flyer"
 for controls in ["Back to site", "Download PDF", "Print flyer", "US Letter", "temporary development preview"]:
     assert controls not in text, f"Preview controls leaked into PDF: {controls}"
 assert any(link.get("uri") == "https://toomuchchips.com/?ref=flyer#drop" for link in page.get_links()), "Missing clickable drop-list link"
